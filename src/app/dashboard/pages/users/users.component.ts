@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { TitleComponent } from '@shared/title/title.component';
 import { RouterModule } from '@angular/router';
 
-
 @Component({
   imports: [CommonModule,RouterModule ,TitleComponent],
   templateUrl: './users.component.html',
