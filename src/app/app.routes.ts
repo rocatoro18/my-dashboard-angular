@@ -58,7 +58,14 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'control-flow',
+        //redirectTo: 'control-flow',
+        redirectTo: (route) => {
+          // ESTO ES UNA FUNCION Y PODEMOS HACER INYECCION... ESTA FUNCION NO PUEDE SER ASINCRONA
+          // const authService = inject(AuthService);
+          // if (authService.isLoggedIn){}
+          console.log(route);
+          return '/dashboard/material';
+        },
         pathMatch: 'full'
       }
     ]

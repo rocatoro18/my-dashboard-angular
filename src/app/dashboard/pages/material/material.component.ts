@@ -5,13 +5,25 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatBadgeModule} from '@angular/material/badge';
 
+import {
+  MatBottomSheet,
+  MatBottomSheetModule,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
+import { OptionsButtomSheetComponent } from './ui/options-buttom-sheet/options-buttom-sheet.component';
 
 @Component({
   selector: 'app-material',
-  imports: [CommonModule, MatSlideToggleModule, MatIconModule, MatButtonModule, MatBadgeModule],
+  imports: [CommonModule, MatSlideToggleModule, MatIconModule, MatButtonModule, MatBadgeModule, MatBottomSheetModule],
   templateUrl: './material.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class MaterialComponent {
+
+  constructor(private _bottomSheet: MatBottomSheet){}
+
+  openButtomSheet(): void{
+    this._bottomSheet.open(OptionsButtomSheetComponent);
+  }
 
 }
